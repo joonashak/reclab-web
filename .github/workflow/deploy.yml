@@ -1,5 +1,7 @@
 name: deploy reclab-web
-on: [push]
+on:
+  push:
+    branches: trunk
 jobs:
   deploy:
     runs-on: ubuntu-latest
