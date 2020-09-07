@@ -21,6 +21,20 @@ jobs:
           --health-retries 5
 
     steps:
+      - name: Checkout backend
+        uses: actions/checkout@v2
+        with:
+          repository: 'joonashak/reclab-cms'
+          path: './cms'
+
+      - name: Set up node for backend
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.8
+
+      - name: Run CMS backend
+        run: npm ci && npm run build && npm run start:prod &
+
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cypress Run
