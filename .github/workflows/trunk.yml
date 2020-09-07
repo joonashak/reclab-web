@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 'joonashak/reclab-cms'
-          path: './cms'
+          path: cms
 
       - name: Set up node for backend
         uses: actions/setup-node@v1
@@ -34,6 +34,7 @@ jobs:
 
       - name: Run CMS backend
         run: npm ci && npm run build && npm run start:prod &
+        working-directory: cms
 
       - name: Checkout
         uses: actions/checkout@v2
