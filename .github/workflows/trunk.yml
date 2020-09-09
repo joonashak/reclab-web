@@ -49,7 +49,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           working-directory: web
-          build: curl http://localhost:3001/ && npm run build
+          build: curl http://127.0.0.1:3001/
           start: npm run serve
           wait-on: 'http://localhost:9000'
         env:
