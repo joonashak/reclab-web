@@ -50,5 +50,5 @@ jobs:
         with:
           working-directory: web
           build: npm run build
-          start: npm run serve
+          start: CMS_URL=http://localhost:3001 npm run serve
           wait-on: 'http://localhost:9000'
