@@ -35,6 +35,11 @@ jobs:
       - name: Run CMS backend
         run: npm ci && npm run build && npm run start:prod &
         working-directory: cms
+        env:
+          NODE_ENV: test
+          PORT: 3001
+          DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
+          JWT_SECRET: asd
 
       - name: Checkout
         uses: actions/checkout@v2
