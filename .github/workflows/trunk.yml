@@ -19,37 +19,27 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
-    steps:
-      - name: Checkout backend
-        uses: actions/checkout@v2
-        with:
-          repository: 'joonashak/reclab-cms'
-          path: cms
-
-      - name: Set up node for backend
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.8
-
-      - name: Run CMS backend
-        run: npm ci && npm run build && npm run start:prod &
-        working-directory: cms
+      cms:
+        image: docker.pkg.github.com/joonashak/reclab-cms/asd:0.0.4
         env:
-          NODE_ENV: test
+          NODE_ENV: development
           PORT: 3001
           DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
           JWT_SECRET: asd
+        # Wait until cms has started.
+        options: >-
+          --health-cmd curl -sS 127.0.0.1:3001 || exit 1
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
+    steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: web
       - name: Cypress Run
         uses: cypress-io/github-action@v2
         with:
-          working-directory: web
-          build: curl http://127.0.0.1:3001/
+          build: curl http://cms:3001/
           start: npm run serve
           wait-on: 'http://localhost:9000'
         env:
