@@ -1,7 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
-console.log("CMS_URL", process.env.CMS_URL);
 
 module.exports = {
   siteMetadata: {
