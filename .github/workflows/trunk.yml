@@ -5,7 +5,7 @@ on:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
     container: node:10.18-jessie
 
     services:
@@ -42,7 +42,6 @@ jobs:
           build: npm run build
           start: npm run serve
           wait-on: 'http://localhost:9000'
-          command: xvfb-run npm cypress run
         env:
           NODE_ENV: test
           CMS_URL: http://cms:3001
