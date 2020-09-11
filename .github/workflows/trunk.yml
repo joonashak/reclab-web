@@ -20,6 +20,8 @@ jobs:
           --health-retries 5
       cms:
         image: joonashak/reclab-cms:0.0.5
+        ports:
+          - 3001:3001
         env:
           NODE_ENV: development
           PORT: 3001
