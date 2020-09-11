@@ -37,8 +37,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - run: curl http://127.0.0.1:3001
-      - run: curl http://cms:3001/pages
       - name: Cypress Run
         uses: cypress-io/github-action@v2
         with:
@@ -47,7 +45,5 @@ jobs:
           wait-on: 'http://localhost:9000'
         env:
           NODE_ENV: test
-          CMS_URL: http://cms:3001
+          CMS_URL: http://127.0.0.1:3001
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: curl http://cms:3001
-      - run: curl http://cms:3001/pages
