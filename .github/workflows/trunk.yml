@@ -39,7 +39,7 @@ jobs:
       - name: Cypress Run
         uses: cypress-io/github-action@v2
         with:
-          build: curl http://cms:3001/
+          build: npm run build
           start: npm run serve
           wait-on: 'http://localhost:9000'
         env:
