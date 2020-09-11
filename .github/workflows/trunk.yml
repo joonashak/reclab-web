@@ -47,7 +47,7 @@ jobs:
         env:
           NODE_ENV: test
           CMS_URL: http://cms:3001
-      - run: cypress run
+      - run: npx cypress run
       - name: Cypress Run
         uses: cypress-io/github-action@v2
         with:
