@@ -16,4 +16,3 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} 
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
           alias-domains: reclab-staging
-          vercel-args: "--build-env [CMS_URL=http://reclab-cms-staging.herokuapp.com]"
