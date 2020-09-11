@@ -6,7 +6,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    container: node:14.8
 
     services:
       db:
@@ -36,18 +35,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v1
-      - run: npm ci
-      - run: npm run build
-        env:
-          NODE_ENV: test
-          CMS_URL: http://cms:3001
-      - run: npm run serve &
-        env:
-          NODE_ENV: test
-          CMS_URL: http://cms:3001
-      - run: npx cypress run
       - name: Cypress Run
         uses: cypress-io/github-action@v2
         with:
