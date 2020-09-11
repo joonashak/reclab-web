@@ -45,3 +45,4 @@ jobs:
         env:
           NODE_ENV: test
           CMS_URL: http://cms:3001
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
