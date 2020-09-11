@@ -20,7 +20,7 @@ jobs:
           --health-timeout 5s
           --health-retries 5
       cms:
-        image: docker.pkg.github.com/joonashak/reclab-cms/asd:0.0.4
+        image: joonashak/reclab-cms:0.0.5
         env:
           NODE_ENV: development
           PORT: 3001
