@@ -2,6 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 console.log('NODE_ENV:', process.env.NODE_ENV)
+console.log('CMS_URL:', process.env.CMS_URL)
 
 module.exports = {
   siteMetadata: {
@@ -35,7 +36,7 @@ module.exports = {
     {
       resolve: "gatsby-source-apiserver",
       options: {
-        url: `${process.env.CMS_URL}/pages`,
+        url: `http://cms:3001/pages`,
         method: "get",
         name: "pages",
       },
