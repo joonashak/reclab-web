@@ -29,7 +29,7 @@ jobs:
           JWT_SECRET: asd
         # Wait until cms has started.
         options: >-
-          --health-cmd "curl -sS 127.0.0.1:3001 || exit 1"
+          --health-cmd "curl -sS 127.0.0.1:3001/seeder/reset || exit 1"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
