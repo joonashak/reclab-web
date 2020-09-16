@@ -20,6 +20,13 @@
   },
   "devDependencies": {
     "cypress": "^4.12.1",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "gatsby-plugin-eslint": "^2.0.8",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -32,7 +39,9 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint \"{src,cypress}/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint:fix": "eslint \"{src,cypress}/**/*.{js,jsx,ts,tsx,json,md}\" --fix"
   },
   "repository": {
     "type": "git",

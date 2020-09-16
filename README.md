@@ -29,3 +29,12 @@ Launch the development environment *(make sure you have the CMS up first)*:
 ```bash
 npm start
 ```
+
+### Linting
+
+Check linting (with auto-fix):
+
+```bash
+npm run lint
+npm run lint:fix
+```

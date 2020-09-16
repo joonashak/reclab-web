@@ -10,6 +10,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,8 +19,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -37,6 +37,18 @@ module.exports = {
         url: `${process.env.CMS_URL}/pages`,
         method: "get",
         name: "pages",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        test: /\.ts$|\.tsx$/,
+        exclude: /(node_modules|.cache|public)/,
+        stages: ["develop"],
+        options: {
+          emitWarning: true,
+          failOnError: false,
+        },
       },
     },
   ],
