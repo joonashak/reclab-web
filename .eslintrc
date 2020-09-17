@@ -1,10 +1,10 @@
 {
   "parser": "babel-eslint",
   "rules": {
-    "strict": 0
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".jsx", ".tsx"] }
+    ]
   },
-  "extends": [
-    "airbnb",
-    "plugin:cypress/recommended"
-  ]
+  "extends": ["airbnb", "plugin:cypress/recommended"]
 }
