@@ -9,7 +9,8 @@ import {
   Typography,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { graphql, StaticQuery } from 'gatsby';
+// eslint-disable-next-line
+import Menu from './Menu';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,39 +42,10 @@ const Layout = ({ children }) => {
           <Typography variant="h6" className={classes.title}>
             Recover Laboratory
           </Typography>
+          <Menu />
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-      <StaticQuery
-        query={graphql`
-          query {
-            allMenu {
-              nodes {
-                order
-                route {
-                  path
-                }
-                title
-                alternative_id
-                alternative_parent {
-                  route {
-                    path
-                  }
-                  title
-                  order
-                  alternative_id
-                }
-              }
-            }
-          }
-        `}
-        render={(data) => (
-          <div>
-            moi
-            {console.log(data)}
-          </div>
-        )}
-      />
       {children}
     </div>
   );
