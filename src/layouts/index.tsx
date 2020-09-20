@@ -67,7 +67,12 @@ const Layout = ({ children }) => {
             }
           }
         `}
-        render={(data) => <div>moi{console.log(data)}</div>}
+        render={(data) => (
+          <div>
+            moi
+            {console.log(data)}
+          </div>
+        )}
       />
       {children}
     </div>
