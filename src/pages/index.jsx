@@ -32,6 +32,11 @@ export const query = graphql`
         title
         content
         id: alternative_id
+        language {
+          id: alternative_id
+          code
+          name
+        }
       }
     }
   }
