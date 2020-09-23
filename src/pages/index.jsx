@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => (
     <h1>Hello production!</h1>
     <p>This page is deployed through github actions.</p>
     <p>Now go build something great.</p>
-    {data.allPages.nodes.map((a) => <p key={a.title}>{a.title}</p>)}
+    {data.allPage.nodes.map((a) => <p key={a.title}>{a.title}</p>)}
     <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
       <Image />
     </div>
@@ -26,11 +26,16 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    allPages(filter: {id: {ne: "dummy"}}) {
+    allPage(filter: {id: {ne: "dummy"}}) {
       nodes {
         title
         content
-        id
+        id: alternative_id
+        language {
+          id: alternative_id
+          code
+          name
+        }
       }
     }
   }

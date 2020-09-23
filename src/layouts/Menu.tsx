@@ -12,14 +12,14 @@ export default () => (
               path
             }
             title
-            alternative_id
-            alternative_parent {
+            id: alternative_id
+            parent: alternative_parent {
               route {
                 path
               }
               title
               order
-              alternative_id
+              id: alternative_id
             }
           }
         }
@@ -28,7 +28,7 @@ export default () => (
     render={(data) => (
       <div>
         {data.allMenu.nodes.map((menuItem) => (
-          <span key={menuItem.alternative_id}>{menuItem.title}</span>
+          <span key={menuItem.id}>{menuItem.title}</span>
         ))}
       </div>
     )}
