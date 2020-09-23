@@ -7,7 +7,6 @@ import SEO from '../components/seo';
 
 const IndexPage = ({ data }) => (
   <Layout>
-    {console.log(data)}
     <SEO title="Home" />
     <h1>Hello production!</h1>
     <p>This page is deployed through github actions.</p>
