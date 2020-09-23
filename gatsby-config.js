@@ -41,7 +41,7 @@ module.exports = {
           {
             url: `${process.env.CMS_URL}/pages`,
             method: 'get',
-            name: 'pages',
+            name: 'page',
           },
           {
             url: `${process.env.CMS_URL}/menu`,
