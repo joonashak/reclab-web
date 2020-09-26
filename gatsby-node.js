@@ -1,3 +1,5 @@
+const path = require('path');
+
 exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
     type language {
@@ -30,4 +32,32 @@ exports.createSchemaCustomization = ({ actions }) => {
       route: route
     }
   `);
+};
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  const result = await graphql(`
+    query {
+      allPage(filter: { id: { ne: "dummy" } }) {
+        nodes {
+          title
+          content
+          id: alternative_id
+          language {
+            id: alternative_id
+            code
+            name
+          }
+        }
+      }
+    }
+  `);
+
+  result.data.allPage.nodes.forEach((page) => {
+    createPage({
+      path: page.id,
+      component: path.resolve('./src/templates/Cms.jsx'),
+    });
+  });
 };
