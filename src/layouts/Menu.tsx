@@ -8,15 +8,9 @@ export default () => (
         allMenu {
           nodes {
             order
-            route {
-              path
-            }
             title
             id: alternative_id
             parent: alternative_parent {
-              route {
-                path
-              }
               title
               order
               id: alternative_id

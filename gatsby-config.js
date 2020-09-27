@@ -39,7 +39,7 @@ module.exports = {
       options: {
         entitiesArray: [
           {
-            url: `${process.env.CMS_URL}/pages`,
+            url: `${process.env.CMS_URL}/page`,
             method: 'get',
             name: 'page',
           },

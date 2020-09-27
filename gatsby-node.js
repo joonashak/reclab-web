@@ -8,18 +8,15 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String!
     }
 
-    type route {
-      alternative_id: ID!
-      path: String!
-    }
-
     type page implements Node @dontInfer {
       alternative_id: ID!
       title: String!
       content: String!
+      createdAt: Date
       updatedAt: Date
       isPublic: Boolean!
       language: language!
+      path: String
     }
 
     type menu implements Node {
@@ -29,7 +26,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       path: String
       language: language!
       alternative_parent: menu
-      route: route
+      page: page
     }
   `);
 };
@@ -41,9 +38,10 @@ exports.createPages = async ({ graphql, actions }) => {
     query {
       allPage(filter: { id: { ne: "dummy" } }) {
         nodes {
+          id: alternative_id
           title
           content
-          id: alternative_id
+          path
           language {
             id: alternative_id
             code
@@ -56,8 +54,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allPage.nodes.forEach((page) => {
     createPage({
-      path: page.id,
-      component: path.resolve('./src/templates/Cms.jsx'),
+      path: page.path,
+      component: path.resolve('./src/templates/Page.tsx'),
     });
   });
 };
