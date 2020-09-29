@@ -2,12 +2,6 @@ const path = require('path');
 
 exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
-    type language {
-      alternative_id: ID!
-      code: String!
-      name: String!
-    }
-
     type page implements Node @dontInfer {
       alternative_id: ID!
       title: String!
@@ -15,7 +9,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       createdAt: Date
       updatedAt: Date
       isPublic: Boolean!
-      language: language!
+      language: String!
       path: String
     }
 
@@ -24,7 +18,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       title: String!
       order: Int!
       path: String
-      language: language!
+      language: String!
       alternative_parent: menu
       page: page
     }
@@ -42,11 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
           title
           content
           path
-          language {
-            id: alternative_id
-            code
-            name
-          }
+          language
         }
       }
     }
