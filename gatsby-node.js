@@ -2,7 +2,12 @@ const path = require('path');
 
 exports.createSchemaCustomization = ({ actions }) => {
   actions.createTypes(`
-    type page implements Node @dontInfer {
+    type Translation {
+      language: String!
+      path: String!
+    }
+
+    type Page implements Node @dontInfer {
       alternative_id: ID!
       title: String!
       content: String!
@@ -11,16 +16,17 @@ exports.createSchemaCustomization = ({ actions }) => {
       isPublic: Boolean!
       language: String!
       path: String
+      translations: [Translation]
     }
 
-    type menu implements Node {
+    type Menu implements Node {
       alternative_id: ID!
       title: String!
       order: Int!
       path: String
       language: String!
-      alternative_parent: menu
-      page: page
+      alternative_parent: Menu
+      page: Page
     }
   `);
 };

@@ -4,7 +4,8 @@ import NavBar from '../components/NavBar/index';
 
 const Layout = ({ children }) => (
   <div>
-    <NavBar>{children}</NavBar>
+    <NavBar />
+    {children}
   </div>
 );
 

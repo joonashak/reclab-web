@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   AppBar,
   Button,
@@ -24,36 +23,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavBar = ({ children }) => {
+const NavBar = () => {
   const classes = useStyles();
 
   return (
-    <div>
-      <AppBar position="sticky">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Recover Laboratory
-          </Typography>
-          <Menu />
-          <LanguageSelect />
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-      {children}
-    </div>
+    <AppBar position="sticky">
+      <Toolbar>
+        <IconButton
+          edge="start"
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="menu"
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" className={classes.title}>
+          Recover Laboratory
+        </Typography>
+        <Menu />
+        <LanguageSelect />
+        <Button color="inherit">Login</Button>
+      </Toolbar>
+    </AppBar>
   );
-};
-
-NavBar.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default NavBar;
