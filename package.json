@@ -42,7 +42,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop -op 3000",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "npm run develop; exit 0",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint \"{src,cypress}/**/*.{js,jsx,ts,tsx,json,md}\"",
