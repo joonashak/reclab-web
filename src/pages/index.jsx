@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import Image from '../components/image';
 import SEO from '../components/seo';
 
-const IndexPage = ({ data }) => (
+export default ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <h1>Hello production!</h1>
@@ -21,8 +21,6 @@ const IndexPage = ({ data }) => (
     <Link to="/using-typescript/">Go to Using TypeScript</Link>
   </Layout>
 );
-
-export default IndexPage;
 
 export const query = graphql`
   query {
