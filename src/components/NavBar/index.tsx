@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu from './Menu';
+import LanguageSelect from '../LanguageSelect';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +43,7 @@ const NavBar = ({ children }) => {
             Recover Laboratory
           </Typography>
           <Menu />
+          <LanguageSelect />
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
