@@ -1,7 +1,8 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+/* eslint-disable import/prefer-default-export, react/jsx-filename-extension */
+import React from 'react';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './src/i18n/i18n';
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) => (
+  <I18nextProvider i18n={i18n}>{element}</I18nextProvider>
+);

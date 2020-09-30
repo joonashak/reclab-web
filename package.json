@@ -18,10 +18,12 @@
     "gatsby-source-apiserver": "^2.1.7",
     "gatsby-source-filesystem": "^2.3.23",
     "gatsby-transformer-sharp": "^2.5.12",
+    "i18next": "^19.7.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^11.7.3"
   },
   "devDependencies": {
     "cypress": "^4.12.1",
@@ -41,12 +43,12 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop -op 3000",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "start": "npm run develop; exit 0",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint \"{src,cypress}/**/*.{js,jsx,ts,tsx,json,md}\"",
-    "lint:fix": "eslint \"{src,cypress}/**/*.{js,jsx,ts,tsx,json,md}\" --fix"
+    "lint": "eslint \"{src,cypress}/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint \"{src,cypress}/**/*.{js,jsx,ts,tsx}\" --fix"
   },
   "repository": {
     "type": "git",
