@@ -1,8 +1,5 @@
-/* eslint-disable import/prefer-default-export, react/jsx-filename-extension */
-import React from 'react';
-import { I18nextProvider } from 'react-i18next';
-import i18n from './src/i18n/i18n';
+import App from './src/App';
+import PageWrapper from './src/PageWrapper';
 
-export const wrapRootElement = ({ element }) => (
-  <I18nextProvider i18n={i18n}>{element}</I18nextProvider>
-);
+export const wrapRootElement = App;
+export const wrapPageElement = PageWrapper;

@@ -3,6 +3,7 @@ import translations from './translations.json';
 
 i18n.init({
   resources: translations,
+  lng: 'en',
   fallbackLng: 'en',
   interpolation: {
     escapeValue: false,

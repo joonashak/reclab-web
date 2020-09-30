@@ -1,2 +1,5 @@
-/* eslint-disable import/prefer-default-export */
-export { wrapRootElement } from './gatsby-ssr';
+import App from './src/App';
+import PageWrapper from './src/PageWrapper';
+
+export const wrapRootElement = App;
+export const wrapPageElement = PageWrapper;

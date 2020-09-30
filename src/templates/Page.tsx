@@ -12,6 +12,9 @@ const Page = ({ pageContext }: InferProps<typeof Page.propTypes>) => {
       <p>
         {t('test')}
       </p>
+      <p>
+        Language={i18n.language}
+      </p>
       <Typography variant="h3">{pageContext.data.title}</Typography>
       <Typography>{pageContext.data.content}</Typography>
     </>
