@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import { useTranslation } from 'react-i18next';
+import useLanguage from '../../hooks/useLanguage';
 
 const query = graphql`
 query {
@@ -21,7 +22,8 @@ query {
 
 export default () => {
   const { i18n } = useTranslation();
-  console.log(i18n.language);
+  const [language] = useLanguage();
+  console.log(language);
   return (
     <StaticQuery
       query={query}
