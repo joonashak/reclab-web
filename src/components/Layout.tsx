@@ -2,16 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NavBar from './NavBar/index';
 
-const Layout = ({ language, children }) => (
+const Layout = ({ page, children }) => (
   <div>
-    <NavBar language={language} />
+    <NavBar page={page} />
     {children}
   </div>
 );
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  language: PropTypes.string.isRequired,
+  page: PropTypes.shape({
+    language: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Layout;

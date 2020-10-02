@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavBar = ({ language }) => {
+const NavBar = ({ page }) => {
   const classes = useStyles();
 
   return (
@@ -41,7 +41,7 @@ const NavBar = ({ language }) => {
         <Typography variant="h6" className={classes.title}>
           Recover Laboratory
         </Typography>
-        <Menu language={language} />
+        <Menu page={page} />
         <LanguageSelect />
         <Button color="inherit">Login</Button>
       </Toolbar>
@@ -50,7 +50,9 @@ const NavBar = ({ language }) => {
 };
 
 NavBar.propTypes = {
-  language: PropTypes.string.isRequired,
+  page: PropTypes.shape({
+    language: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default NavBar;

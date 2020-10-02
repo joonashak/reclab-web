@@ -19,13 +19,13 @@ query {
 }
 `;
 
-const Menu = ({ language }) => (
+const Menu = ({ page }) => (
   <StaticQuery
     query={query}
   >
     {(data) => (
       <div>
-        {`menu has language ${language}`}
+        {`menu has language ${page.language}`}
         {data.allMenu.nodes.map((menuItem) => (
           <span key={menuItem.id}>{menuItem.title}</span>
         ))}
@@ -35,7 +35,9 @@ const Menu = ({ language }) => (
 );
 
 Menu.propTypes = {
-  language: PropTypes.string.isRequired,
+  page: PropTypes.shape({
+    language: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Menu;

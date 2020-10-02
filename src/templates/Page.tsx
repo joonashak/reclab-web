@@ -9,7 +9,7 @@ const Page = ({ pageContext }: InferProps<typeof Page.propTypes>) => {
   i18n.changeLanguage(pageContext.data.language);
 
   return (
-    <PageWrapper language={pageContext.data.language || 'en'}>
+    <PageWrapper page={pageContext.data}>
       <p>
         {t('test')}
       </p>
