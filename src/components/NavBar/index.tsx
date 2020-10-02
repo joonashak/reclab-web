@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   AppBar,
   Button,
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavBar = () => {
+const NavBar = ({ language }) => {
   const classes = useStyles();
 
   return (
@@ -40,12 +41,16 @@ const NavBar = () => {
         <Typography variant="h6" className={classes.title}>
           Recover Laboratory
         </Typography>
-        <Menu />
+        <Menu language={language} />
         <LanguageSelect />
         <Button color="inherit">Login</Button>
       </Toolbar>
     </AppBar>
   );
+};
+
+NavBar.propTypes = {
+  language: PropTypes.string.isRequired,
 };
 
 export default NavBar;

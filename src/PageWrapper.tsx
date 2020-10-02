@@ -1,12 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from './components/Layout';
 
-const PageWrapper = ({ element, props }) => {
-  const { pageContext: { data: { language } } } = props;
+const PageWrapper = ({ language, children }) => (
+  <Layout language={language}>{children}</Layout>
+);
 
-  return (
-    <Layout language={language}>{element}</Layout>
-  );
+PageWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  language: PropTypes.string.isRequired,
 };
 
 export default PageWrapper;

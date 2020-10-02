@@ -1,12 +1,6 @@
 import React, { useContext, createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const defaultState = {
-  type: null,
-  message: null,
-  autoHide: false,
-};
-
 const LanguageContext = createContext([[], () => {}]);
 
 const LanguageProvider = ({ children }) => {
