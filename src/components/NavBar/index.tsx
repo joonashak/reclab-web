@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   AppBar,
@@ -26,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = ({ page }) => {
   const classes = useStyles();
+
+  useEffect(() => {
+    console.log('navbar did mount');
+    return () => console.log('navbar did unmount');
+  }, [])
 
   return (
     <AppBar position="sticky">

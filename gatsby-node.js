@@ -43,6 +43,10 @@ exports.createPages = async ({ graphql, actions }) => {
           content
           path
           language
+          translations {
+            path
+            language
+          }
         }
       }
     }
