@@ -8,12 +8,12 @@ module.exports = {
     description:
       'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
     author: '@gatsbyjs',
+    languages: ['fi', 'en'],
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-layout',
     'gatsby-plugin-material-ui',
     {
       resolve: 'gatsby-source-filesystem',
@@ -39,14 +39,14 @@ module.exports = {
       options: {
         entitiesArray: [
           {
-            url: `${process.env.CMS_URL}/pages`,
+            url: `${process.env.CMS_URL}/page`,
             method: 'get',
-            name: 'page',
+            name: 'Page',
           },
           {
             url: `${process.env.CMS_URL}/menu`,
             method: 'get',
-            name: 'menu',
+            name: 'Menu',
           },
         ],
       },

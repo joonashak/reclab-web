@@ -1,7 +1,6 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import App from './src/App';
+// import PageWrapper from './src/PageWrapper';
 
-// You can delete this file if you're not using it
+/* eslint-disable-next-line */
+export const wrapRootElement = App;
+// export const wrapPageElement = PageWrapper;

@@ -1,7 +1,6 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import App from './src/App';
+// import PageWrapper from './src/PageWrapper';
 
-// You can delete this file if you're not using it
+/* eslint-disable-next-line */
+export const wrapRootElement = App;
+// export const wrapPageElement = PageWrapper;
