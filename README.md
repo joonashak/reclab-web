@@ -1,5 +1,7 @@
 # reclab-web
 
+> ‼️ **_NOTE!_** This repository has been merged into [reclab](https://github.com/joonashak/reclab) monolithic repository and will no longer be maintained.
+
 This app implements the Recover Laboratory website frontend.
 
 ## Deployment Strategy
